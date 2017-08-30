@@ -623,8 +623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30511fce61a126944ab13f18c4fd1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onGround: 1
   speed: 5
   lookSensitivity: 2.5
+  jumpPower: 300
 --- !u!114 &114897032731808560
 MonoBehaviour:
   m_ObjectHideFlags: 1

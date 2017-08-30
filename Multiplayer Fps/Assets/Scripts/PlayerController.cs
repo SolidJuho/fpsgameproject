@@ -3,11 +3,16 @@
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
+	public bool onGround = true;
 
     [SerializeField]
     private float speed = 5f;
     [SerializeField]
     private float lookSensitivity = 3f;
+
+	[SerializeField]
+	private float jumpPower = 1000f;
+
     private PlayerMotor motor;
 
     void Start()
@@ -28,7 +33,11 @@ public class PlayerController : MonoBehaviour
         Vector3 _velocity = (_movHorizontal + _movVertical).normalized * speed;
 
         //Apply movement
-        motor.Move(_velocity);
+		if (onGround) {
+			motor.Move (_velocity);
+		} else {
+			motor.Move (_velocity/1.4f);
+		}
 
         //Calculate rotation as 3D vector (turning around)
         float _yRot = Input.GetAxisRaw("Mouse X");
@@ -41,9 +50,29 @@ public class PlayerController : MonoBehaviour
         //Calculate camera rotation as 3D vector (turning around)
         float _xRot = Input.GetAxisRaw("Mouse Y");
 
-        Vector3 _cameraRotation = new Vector3(_xRot, 0f, 0f) * lookSensitivity;
+		float _cameraRotationX = _xRot * lookSensitivity;
 
         //Apply camera rotation
-        motor.RotateCamera(_cameraRotation);
+        motor.RotateCamera(_cameraRotationX);
+
+		RaycastHit hit;
+		Vector3 physicsCentre = this.transform.position + this.GetComponent<BoxCollider>().center;
+		if (Physics.Raycast(physicsCentre, Vector3.down, out hit, 1.02f)) {
+			if (hit.transform.gameObject.tag != "Player") {
+				onGround = true;
+			}
+		} else {
+			onGround = false;
+		}
+		if(Input.GetKeyDown(KeyCode.Space)) {
+			jump();
+		}
     }
+
+	//Jumping functio
+	public void jump() {
+		if (onGround) {
+			this.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower);
+		}
+	}
 }
