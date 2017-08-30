@@ -19,17 +19,13 @@ Platform assembly: C:\Users\Mushroom\Desktop\Github\fpsgameproject\gameversio0.0
 Loading C:\Users\Mushroom\Desktop\Github\fpsgameproject\gameversio0.02_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Mushroom\Desktop\Github\fpsgameproject\gameversio0.02_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Mushroom\Desktop\Github\fpsgameproject\gameversio0.02_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.042 seconds
+- Completed reload, in  0.059 seconds
 Platform assembly: C:\Users\Mushroom\Desktop\Github\fpsgameproject\gameversio0.02_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Mushroom\Desktop\Github\fpsgameproject\gameversio0.02_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.572579 ms
+UnloadTime: 3.311952 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 6cc -> priority: 1 
-A game object can only be in one layer. The layer needs to be in the range [0...31]
- 
-(Filename:  Line: 788)
-
+  Thread -> id: 19c8 -> priority: 1 
