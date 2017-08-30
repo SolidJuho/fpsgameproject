@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 114968116581036610}
   - component: {fileID: 114486264447916142}
   - component: {fileID: 114897032731808560}
+  - component: {fileID: 114092986219030434}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -547,6 +548,17 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548803897552192}
   m_Enabled: 1
+--- !u!114 &114092986219030434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725015530566958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63d98f5c781fa245857fe15ae6f4607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114168962903183522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -559,6 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 20205850490892144}
+  cameraRotationLimit: 80
 --- !u!114 &114187627365290496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -626,7 +639,7 @@ MonoBehaviour:
   onGround: 1
   speed: 5
   lookSensitivity: 2.5
-  jumpPower: 300
+  jumpPower: 250
 --- !u!114 &114897032731808560
 MonoBehaviour:
   m_ObjectHideFlags: 1
