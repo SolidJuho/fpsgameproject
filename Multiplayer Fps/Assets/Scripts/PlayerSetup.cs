@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
-public class PlayerSetup : NetworkBehaviour {
+[RequireComponent(typeof(Player))]
+public class PlayerSetup : NetworkBehaviour
+{
 
     [SerializeField]
     Behaviour[] componentsToDisable;
@@ -9,30 +11,46 @@ public class PlayerSetup : NetworkBehaviour {
     [SerializeField]
     string remoteLayerName = "RemotePlayer";
 
-    Camera scenecamera;
+    Camera sceneCamera;
 
-    private void Start()
+    void Start()
     {
+        // Disable components that should only be
+        // active on the player that we control
         if (!isLocalPlayer)
         {
             DisableComponents();
             AssignRemoteLayer();
-        } else
+        }
+        else
         {
-            scenecamera = Camera.main;
-            if (scenecamera != null)
+            // We are the local player: Disable the scene camera
+            sceneCamera = Camera.main;
+            if (sceneCamera != null)
             {
-                Camera.main.gameObject.SetActive(false);
+                sceneCamera.gameObject.SetActive(false);
             }
         }
+
+        GetComponent<Player>().Setup();
     }
 
-    void AssignRemoteLayer ()
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+
+        string _netID = GetComponent<NetworkIdentity>().netId.ToString();
+        Player _player = GetComponent<Player>();
+
+        GameManager.RegisterPlayer(_netID, _player);
+    }
+
+    void AssignRemoteLayer()
     {
         gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
     }
 
-    void DisableComponents ()
+    void DisableComponents()
     {
         for (int i = 0; i < componentsToDisable.Length; i++)
         {
@@ -40,11 +58,16 @@ public class PlayerSetup : NetworkBehaviour {
         }
     }
 
+    // When we are destroyed
     void OnDisable()
     {
-        if(scenecamera != null)
+        // Re-enable the scene camera
+        if (sceneCamera != null)
         {
-            scenecamera.gameObject.SetActive(true);
-        }    
+            sceneCamera.gameObject.SetActive(true);
+        }
+
+        GameManager.UnRegisterPlayer(transform.name);
     }
+
 }
