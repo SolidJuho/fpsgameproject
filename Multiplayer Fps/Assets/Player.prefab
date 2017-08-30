@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33123553613293082}
   - component: {fileID: 65742873645737986}
   - component: {fileID: 23389764287580182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4640407882270270}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4106957438451684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 33608335464838582}
   - component: {fileID: 65696150561677568}
   - component: {fileID: 23816060019431606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 33033075219683958}
   - component: {fileID: 65044628072354888}
   - component: {fileID: 23769212182995412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 33300172752270896}
   - component: {fileID: 65188330003623836}
   - component: {fileID: 23309585098962542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 124538261081200594}
   - component: {fileID: 92302541747914002}
   - component: {fileID: 81040672086262846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,9 +149,9 @@ GameObject:
   - component: {fileID: 114486264447916142}
   - component: {fileID: 114897032731808560}
   - component: {fileID: 114092986219030434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,6 +559,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63d98f5c781fa245857fe15ae6f4607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon:
+    name: Parabellum P08
+    damage: 10
+    range: 150
+  cam: {fileID: 20205850490892144}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114168962903183522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -675,6 +683,8 @@ MonoBehaviour:
   - {fileID: 114514448759871116}
   - {fileID: 20205850490892144}
   - {fileID: 81040672086262846}
+  - {fileID: 114092986219030434}
+  remoteLayerName: RemotePlayer
 --- !u!124 &124538261081200594
 Behaviour:
   m_ObjectHideFlags: 1
