@@ -2280,7 +2280,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1596976235312600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: daa92022f0a01c3439e1db60779c6488, type: 3}
   m_Controller: {fileID: 9100000, guid: fa8eb115b297daf4a960a83063090127, type: 2}
   m_CullingMode: 1
@@ -2298,11 +2298,11 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725015530566958}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: daa92022f0a01c3439e1db60779c6488, type: 3}
   m_Controller: {fileID: 9100000, guid: fa8eb115b297daf4a960a83063090127, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

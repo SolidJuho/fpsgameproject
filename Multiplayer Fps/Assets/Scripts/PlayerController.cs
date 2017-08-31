@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
         //animate movement
         animator.SetFloat("ForwardVelocity", _zMov);
+        Debug.Log("Forward velocity is " + animator.GetFloat("ForwardVelocity"));
 
         //Apply movement
 		if (onGround) {
