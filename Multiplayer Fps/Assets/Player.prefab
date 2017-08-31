@@ -873,6 +873,7 @@ GameObject:
   - component: {fileID: 114092986219030434}
   - component: {fileID: 114734507648644316}
   - component: {fileID: 95567750051914370}
+  - component: {fileID: 114640124500440454}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2302,7 +2303,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: fa8eb115b297daf4a960a83063090127, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2404,9 +2405,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onGround: 1
-  speed: 5
+  speed: 2
   lookSensitivity: 2.5
   jumpPower: 250
+--- !u!114 &114640124500440454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725015530566958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4708515218284324}
+  m_ChildIndex: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 1
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.3
+  m_InterpolateMovement: 0
 --- !u!114 &114734507648644316
 MonoBehaviour:
   m_ObjectHideFlags: 1
